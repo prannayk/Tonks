@@ -14,4 +14,3 @@ treeAdd (Node thisElement treei treej) addElement
     | thisElement > addElement = Node addElement tree1 (treeAdd tree2 thisElement) 
     | otherwise = Node thisElement tree1 (treeAdd tree2 thisElement)
     where (tree1,tree2) = sizeMax treei treej
-

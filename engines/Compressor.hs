@@ -2,6 +2,8 @@
 -- initial implementation for strings, but will be followed by int64 abstractions for all kinds of data
 -- lossless Huffman encoding compression algorithm has been implemented
 
+module Compressor where
+
 allText :: String
 allText = ['a'..'z']++['A'..'Z']++(concat $ map show [1..9])
 
