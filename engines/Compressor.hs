@@ -5,10 +5,10 @@
 allText :: String
 allText = ['a'..'z']++['A'..'Z']++(concat $ map show [1..9])
 
-countN :: String -> Char -> [Int]
-countN string a = [length $ filter (==a) string]
+countN :: String -> Char -> [(Char,Int)]
+countN string a = [(a,length $ filter (==a) string)]
 
-histogram :: String -> [Int]
-histogram string = allText >>= countN string
+histogram :: String -> [(Char, Int)]
+histogram string = filter (\(_,n) -> n/=0) $ allText >>= countN string
 
 -- huffman encoding takes input text and it's histogram
