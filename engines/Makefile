@@ -8,6 +8,6 @@ commit :
 	cd ..
 	git add . -A
 	git commit -m "Buld update!"
-	cd engine
+	cd engines
 push :
 	git push origin master
