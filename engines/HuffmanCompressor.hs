@@ -72,9 +72,11 @@ calcEncoding tree vals
     | isLeaf tree = [(tagRequest tree,vals)]
     | otherwise = (calcEncoding (leftChild tree) (vals ++ [0])) ++ (calcEncoding (rightChild tree) (vals ++ [1]))
 
+
 main :: IO ()
 main = do
     let histo = histogram "kfgasjdhkajshdasjdk"
         leaves = leafNodes histo
         tree = recurBuild leaves
     putStrLn $ show (calcEncoding tree [])
+
